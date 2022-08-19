@@ -14,14 +14,14 @@ import "autotrack/lib/plugins/url-change-tracker";
 import {getFCP, getLCP, getFID, getCLS, getTTFB} from "web-vitals";
 import "./scripts/sun";
 
-Sentry.init({
-  dsn: "https://2774d8d5d9c3402fb93dd9e702e39470@sentry.dev.harker.org/11",
-  integrations: [new Integrations.Vue({Vue, attachProps: true, logErrors: true})],
-  release: "harker-bell@"+process.env.VUE_APP_VERSION,
-});
-window.onload = () => {
-  setTimeout(() => Sentry.setTag("nodes", document.getElementsByTagName("*").length), 2000);
-};
+// Sentry.init({
+//   dsn: "https://2774d8d5d9c3402fb93dd9e702e39470@sentry.dev.harker.org/11",
+//   integrations: [new Integrations.Vue({Vue, attachProps: true, logErrors: true})],
+//   release: "harker-bell@"+process.env.VUE_APP_VERSION,
+// });
+// window.onload = () => {
+//   setTimeout(() => Sentry.setTag("nodes", document.getElementsByTagName("*").length), 2000);
+// };
 
 function saveWebVitals({name, delta, id}) {
   if (window.ga) ga("send", "event", {
@@ -74,7 +74,7 @@ if (window.indexedDB)
     initVue();
     //console.log("==> VUE: ", new Date()-timestamp);
   }).catch(err => {
-    Sentry.captureException(err);
+    // Sentry.captureException(err);
     window.db = null;
     initVue();
   });
@@ -87,11 +87,11 @@ function initVue() {
   }).$mount("#app");
 }
 localStorage.setItem("appVersion", process.env.VUE_APP_VERSION);
-ga("set", "dimension5", process.env.VUE_APP_VERSION || "not set");
-ga("require", "eventTracker", {events: ["click", "contextmenu", "focus"]});
-ga("require", "outboundLinkTracker", {
+if (window.ga) window.ga("set", "dimension5", process.env.VUE_APP_VERSION || "not set");
+if (window.ga) window.ga("require", "eventTracker", {events: ["click", "contextmenu", "focus"]});
+if (window.ga) window.ga("require", "outboundLinkTracker", {
   events: ["click", "contextmenu", "auxclick"],
   shouldTrackOutboundLink: () => true});
-ga("require", "pageVisibilityTracker", {visibleThreshold: 500, visibleMetricIndex: 1});
-ga("require", "urlChangeTracker");
-ga(trk => Sentry.setTag("clientId", trk.get("clientId")));
+if (window.ga) window.ga("require", "pageVisibilityTracker", {visibleThreshold: 500, visibleMetricIndex: 1});
+if (window.ga) window.ga("require", "urlChangeTracker");
+if (window.ga) window.ga(trk => Sentry.setTag("clientId", trk.get("clientId")));

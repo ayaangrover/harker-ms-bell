@@ -73,7 +73,7 @@
               <v-list-item-title class="list-item-text">Settings</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <!-- <v-list-item href="https://bell.harker.org/submitevent" target="_blank">
+          <!-- <v-list-item href="https://msbell.harker.xyz/submitevent" target="_blank">
             <v-list-item-icon class="list-item-icon">
               <v-icon class="material-icons-outlined">open_in_new</v-icon>
             </v-list-item-icon>
@@ -159,7 +159,6 @@
             </svg>
           </v-btn>
         </template>
-        <iframe src="https://harkerdev-menu.netlify.app/?exclude=bell" style="border: none; height: 100%"></iframe>
       </v-menu>
     </v-app-bar>
     <div id="message-wrapper" class="mb-2 hidden-print-only" style="height: 14px;">
@@ -232,7 +231,7 @@
           <v-row>
             <v-col class="caption text-center short px-6 pb-0">
               <p>
-                <a href="https://bell.harker.org/docs/api.html?utm_source=bell&utm_medium=inapp#event-categories"
+                <a href="https://msbell.harker.xyz/docs/api.html#event-categories"
                    target="_blank"
                 >What do the event colors mean?</a>
               </p>
@@ -248,15 +247,15 @@
           <v-row>
             <v-col class="text-center short px-6 pb-0">
               <p>
-                <a href="https://bell.harker.org/docs/api.html?utm_source=bell&utm_medium=inapp" target="_blank">API
-                  Docs</a> • <a href="https://github.com/HarkerDev/harker-bell" target="_blank">GitHub</a> • <a
-                  href="https://bell.harker.org/docs?utm_source=bell&utm_medium=inapp" target="_blank"
-                >Help</a> • <a href="https://github.com/HarkerDev/harker-bell/releases" target="_blank">Release Notes</a>
+                <a href="https://msbell.harker.xyz/docs/api.html" target="_blank">API
+                  Docs</a> • <a href="https://github.com/CMEONE/harker-ms-bell" target="_blank">GitHub</a> • <a
+                  href="https://msbell.harker.xyz/docs" target="_blank"
+                >Help</a> • <a href="https://github.com/CMEONE/harker-ms-bell/releases" target="_blank">Release Notes</a>
               </p>
               <p class="overline">
                 Made with
                 <v-icon class="material-icons-outlined mt-n1" color="grey2" small>code</v-icon>
-                by <a href="https://dev.harker.org/?utm_source=bell&utm_medium=hdev" target="_blank">HarkerDev</a>
+                by <a href="https://kabirramzan.com/" target="_blank">Kabir Ramzan</a>
               </p>
             </v-col>
           </v-row>
@@ -312,7 +311,7 @@
     <v-snackbar v-model="snackbars.offlineReady" :timeout="30000">
       {{ features.beforeInstallPrompt ? 'Install this app in one click for quick and easy access.' : 'Install this app onto your home screen for quick and easy access.' }}
       <v-btn v-if="features.beforeInstallPrompt" text @click="showInstallPrompt">Install</v-btn>
-      <v-btn v-else text href="https://bell.harker.org/docs/install.html?utm_source=bell&utm_medium=inapp"
+      <v-btn v-else text href="https://msbell.harker.xyz/docs/install.html?utm_source=bell&utm_medium=inapp"
              target="_blank" @click="snackbars.offlineReady = false"
       >
         Learn More
@@ -547,7 +546,7 @@ export default {
     this.time.today = this.getCurrentUTCMidnight();
     //console.log("STARTING:\t", new Date-abcd);
     await this.setCalendar(this.$route);
-    this.socket = io("https://bell.dev.harker.org");
+    this.socket = io("https://msbell-backend.harker.xyz");
     this.socket.on("connect", () => {
       //console.log("SOCK CONN:\t", new Date-abcd);
       this.io.connected = true;

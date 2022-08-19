@@ -1,8 +1,8 @@
 {
-  "name": "harker-bell",
+  "name": "harker-ms-bell",
   "version": "2.6.1",
   "private": true,
-  "author": "HarkerDev",
+  "author": "Kabir Ramzan",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --modern",
@@ -112,12 +112,12 @@
     "not IE <= 11"
   ],
   "bugs": {
-    "url": "https://github.com/HarkerDev/harker-bell/issues"
+    "url": "https://github.com/CMEONE/harker-ms-bell/issues"
   },
-  "homepage": "https://github.com/HarkerDev/harker-bell#readme",
-  "license": "MIT",
+  "homepage": "https://github.com/CMEONE/harker-ms-bell#readme",
+  "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HarkerDev/harker-bell"
+    "url": "git+https://github.com/CMEONE/harker-ms-bell"
   }
 }
