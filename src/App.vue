@@ -135,7 +135,7 @@
         </template>
 <!--        <div style="height: max-content; min-height: 50px; background-color: var(&#45;&#45;v-accent-base); align-items: center; padding: 4px;">-->
           <v-card style="max-width: 300px; padding: 5px;">
-            <p class="text-center heading pa-0">ASB Announcements</p>
+            <p class="text-center heading pa-0">Leadership Council Announcements</p>
             <v-divider></v-divider>
             <div id="announcement" class="caption text-center"
                  v-html="announcement" style="margin: 3px"
