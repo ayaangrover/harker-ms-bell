@@ -17,7 +17,7 @@ import "./scripts/sun";
 // Sentry.init({
 //   dsn: "https://2774d8d5d9c3402fb93dd9e702e39470@sentry.dev.harker.org/11",
 //   integrations: [new Integrations.Vue({Vue, attachProps: true, logErrors: true})],
-//   release: "harker-bell@"+process.env.VUE_APP_VERSION,
+//   release: "harker-ms-bell@"+process.env.VUE_APP_VERSION,
 // });
 // window.onload = () => {
 //   setTimeout(() => Sentry.setTag("nodes", document.getElementsByTagName("*").length), 2000);
@@ -94,4 +94,4 @@ if (window.ga) window.ga("require", "outboundLinkTracker", {
   shouldTrackOutboundLink: () => true});
 if (window.ga) window.ga("require", "pageVisibilityTracker", {visibleThreshold: 500, visibleMetricIndex: 1});
 if (window.ga) window.ga("require", "urlChangeTracker");
-if (window.ga) window.ga(trk => Sentry.setTag("clientId", trk.get("clientId")));
+// if (window.ga) window.ga(trk => Sentry.setTag("clientId", trk.get("clientId")));
