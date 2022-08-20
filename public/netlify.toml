@@ -10,11 +10,11 @@
   headers = {Access-Control-Allow-Origin = "https://msbell.harker.xyz"}
 [[redirects]]
   from = "/docs/*"
-  to = "https://harkermsbell-docs.netlify.com/:splat"
+  to = "https://harker-ms-bell-docs.netlify.com/:splat"
   status = 200
 [[redirects]]
   from = "/admin/*"
-  to = "https://harkermsbell-admin.netlify.com/:splat"
+  to = "https://harker-ms-bell-admin.netlify.com/:splat"
   status = 200
 [[redirects]]
   from = "/api/*"
