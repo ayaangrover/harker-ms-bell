@@ -64,7 +64,7 @@ Vue.config.productionTip = false;
 
 //let timestamp = new Date();
 if (window.indexedDB)
-  openDB("harker-bell-db", 1, {
+  openDB("harker-ms-bell-db", 1, {
     upgrade(db) {
       db.createObjectStore("schedules", {keyPath: "date"});
     },
