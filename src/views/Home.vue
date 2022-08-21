@@ -69,7 +69,7 @@
                     <v-sheet v-if="period.link" class="period regular-period border caption text-center d-flex" :color="getColor(period.name) && getColor(period.name)+' lighten-5'" :height="period.duration+1" tile :tag="'div'" @mousemove.stop="onMouseMove">
                       <v-layout :class="['content', {short: period.duration <= 50 || group.length > 1}, getColor(period.name) && getColor(period.name)+'--text text--darken-4']" column align-center justify-center>
                         <div ref="periodNames" class="period-name">
-                          <span v-html="period.name && settings.periodNames[period.name.substring(1, 2)-1] ? settings.periodNames[period.name.substring(1, 2)-1]+' ('+period.name+')' : period.name"></span>
+                          <span v-html="period.name && settings.periodNames[period.name.substring(6, 7)-1] ? settings.periodNames[period.name.substring(6, 7)-1]+' ('+period.name+')' : period.name"></span>
                           <span v-if="period.name && period.start && period.duration < 30 && column.length <= 1" class="text-no-wrap text--secondary"> {{period.start|formatTime}}&ndash;{{period.end|formatTime}}</span>
                         </div>
                         <!-- Part of v-if for text height: && $refs.periodNames[gIndex+cIndex+pIndex].offsetHeight < 28 -->
@@ -81,7 +81,7 @@
                     <v-sheet v-else class="period regular-period border caption text-center d-flex" :color="getColor(period.name) && getColor(period.name)+' lighten-5'" :height="period.duration+1" tile :tag="'div'" @mousemove.stop="onMouseMove">
                       <v-layout :class="['content', {short: period.duration <= 50 || group.length > 1}, getColor(period.name) && getColor(period.name)+'--text text--darken-4']" column align-center justify-center>
                         <div ref="periodNames" class="period-name">
-                          <span v-html="period.name && settings.periodNames[period.name.substring(1, 2)-1] && period.name.startsWith('P') ? settings.periodNames[period.name.substring(1, 2)-1]+' ('+period.name+')' : period.name"></span>
+                          <span v-html="period.name && settings.periodNames[period.name.substring(6, 7)-1] && period.name.startsWith('Class ') ? settings.periodNames[period.name.substring(6, 7)-1]+' ('+period.name+')' : period.name"></span>
                           <span v-if="period.name && period.start && period.duration < 30 && column.length <= 1" class="text-no-wrap text--secondary"> {{period.start|formatTime}}&ndash;{{period.end|formatTime}}</span>
                         </div>
                         <!-- Part of v-if for text height: && $refs.periodNames[gIndex+cIndex+pIndex].offsetHeight < 28 -->
@@ -246,8 +246,8 @@ export default {
      *
      */
     getColor(period) {
-      if (this.settings.showColors && period && /^P[1-8]/.test(period))
-        return this.settings.periodColors[+period.substring(1, 2)-1];
+      if (this.settings.showColors && period && /^Class [1-8]/.test(period))
+        return this.settings.periodColors[+period.substring(6, 7)-1];
       return undefined;
     },
     onMouseMove(e) {

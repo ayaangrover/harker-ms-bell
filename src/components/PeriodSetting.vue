@@ -1,7 +1,7 @@
 <template>
   <v-row no-gutters>
     <v-col cols="auto">
-      <v-subheader class="body-1 pl-0 mr-2">P{{num}}</v-subheader>
+      <v-subheader class="body-1 pl-0 mr-2">Class {{num}}</v-subheader>
     </v-col>
     <v-col>
       <v-row no-gutters>

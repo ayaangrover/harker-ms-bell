@@ -201,7 +201,7 @@
         <v-divider></v-divider>
         <v-list>
           <v-list-item>
-            <v-list-item-content>Show period colors</v-list-item-content>
+            <v-list-item-content>Show class colors</v-list-item-content>
             <v-list-item-action>
               <v-switch v-model="settings.showColors" color="accent" :inset="features.ios"></v-switch>
             </v-list-item-action>
