@@ -3,7 +3,7 @@
     <v-row key="content" class="row-container" justify="center" no-gutters>
       <v-col v-for="(date, j) in calendar.dates" :key="date.getTime()" class="cols-5" cols="4">
         <!-- DAY CONTAINER -->
-        <v-sheet ref="day" class="day-container border-thick" max-width="180" min-height="497">
+        <v-sheet ref="day" class="day-container border-thick" max-width="180" min-height="522">
           <!-- DAY HEADER -->
           <v-sheet class="day-header" :color="time.today.getTime() == date.getTime() ? 'blue2 lighten-4' : ''" height="44" tile>
             <v-row class="ml-5" align="center" no-gutters>
