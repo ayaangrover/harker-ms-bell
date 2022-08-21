@@ -127,7 +127,7 @@
       </v-menu>
       <v-menu offset-y min-width="300" content-class="hdev-announcement">
         <template v-slot:activator="{on: menu}">
-          <v-btn class="hidden-print-only" icon aria-label="All apps" ga-on="click, contextmenu"
+          <v-btn class="hidden-print-only" icon aria-label="Announcements" ga-on="click, contextmenu"
                  ga-event-category="app menu" ga-event-action="click" v-on="{...menu}"
           >
             <v-icon color="#0ebf8f" size="30" class="material-icons-outlined">campaign</v-icon>
@@ -145,21 +145,6 @@
 <!--        </div>-->
       </v-menu>
       <v-spacer></v-spacer>
-      <v-menu offset-y min-width="300" content-class="hdev-app-menu">
-        <template v-slot:activator="{on: menu}">
-          <v-btn class="hidden-print-only" icon aria-label="All apps" ga-on="click, contextmenu"
-                 ga-event-category="app menu" ga-event-action="click" v-on="{...menu}"
-          >
-            <!--            <v-icon class="material-icons-outlined">apps</v-icon>-->
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24">
-              <path d="M0 0h24v24H0V0z" fill="none"/>
-              <path fill="currentColor"
-                    d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"
-              />
-            </svg>
-          </v-btn>
-        </template>
-      </v-menu>
     </v-app-bar>
     <div id="message-wrapper" class="mb-2 hidden-print-only" style="height: 14px;">
       <!-- eslint-disable-next-line vue/no-v-html -->
