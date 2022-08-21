@@ -375,7 +375,7 @@ export default {
         enableBells: localStorage.getItem("virtualBells") != "false",
         enableNotifications: localStorage.getItem("enableNotifications") == "true",
         showColors: localStorage.getItem("showPeriodColors") == "true",
-        periodColors: JSON.parse(localStorage.getItem("periodColors")) || ["blue2", "red2", "green2", "yellow2", "orange2", "teal2", "purple2"],
+        periodColors: JSON.parse(localStorage.getItem("periodColors")) || ["blue2", "red2", "green2", "yellow2", "orange2", "teal2", "purple2", "pink2"],
         periodNames: JSON.parse(localStorage.getItem("periodNames")) || [],
         links: JSON.parse(localStorage.getItem("periodLinks")) || {},
         tempLinks: JSON.parse(localStorage.getItem("periodLinks")) || {},

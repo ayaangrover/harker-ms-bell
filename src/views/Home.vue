@@ -246,7 +246,7 @@ export default {
      *
      */
     getColor(period) {
-      if (this.settings.showColors && period && /^P[1-7]/.test(period))
+      if (this.settings.showColors && period && /^P[1-8]/.test(period))
         return this.settings.periodColors[+period.substring(1, 2)-1];
       return undefined;
     },
