@@ -225,7 +225,7 @@
         <v-card-text>
           <v-row>
             <v-col>
-              <period-setting v-for="i in 7" :key="i" :num="i" :settings="settings"></period-setting>
+              <period-setting v-for="i in 8" :key="i" :num="i" :settings="settings"></period-setting>
             </v-col>
           </v-row>
           <v-row>
