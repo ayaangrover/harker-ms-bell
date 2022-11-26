@@ -23,9 +23,9 @@
     <template v-else>
       <v-layout v-for="(group, gIndex) in computedSchedule" :key="gIndex" class="group">
         <v-flex v-for="(column, cIndex) in group" :key="cIndex" class="column">
-          <!-- <schedule-period v-for="(period, pIndex) in column" @toggle-menu="$emit('toggle-menu', $event)" :lunch="period.name && period.name.toLowerCase().indexOf('lunch') != -1" :period="period" :sheet-id="index+'-'+gIndex+'-'+cIndex+'-'+pIndex"></schedule-period> -->
+          <!-- <schedule-period v-for="(period, pIndex) in column" @toggle-menu="$emit('toggle-menu', $event)" :lunch="period.name && period.name.toLowerCase().indexOf('lunch') != -1 && false" :period="period" :sheet-id="index+'-'+gIndex+'-'+cIndex+'-'+pIndex"></schedule-period> -->
           <template v-for="(period, pIndex) in column">
-            <v-hover v-if="period.name && period.name.toLowerCase().indexOf('lunch') != -1" :key="pIndex" v-slot:default="{hover}">
+            <v-hover v-if="period.name && period.name.toLowerCase().indexOf('lunch') != -1 && false" :key="pIndex" v-slot:default="{hover}">
               <v-sheet :id="index+'-'+gIndex+'-'+cIndex+'-'+pIndex" class="period lunch caption text-xs-center d-flex" :elevation="open ? 4 : (hover ? 2 : 0)" :height="period.duration+1" tile @click.stop="showMenu()" :style="{'z-index': (open || hover) ? 2 : 1}">
                 <v-layout :class="{content: true, short: period.duration <= 50}" column align-center justify-center>
                   <div ref="periodNames" v-html="period.name"></div>
