@@ -440,7 +440,7 @@ export default {
     /** Handles changes to the dark mode setting. */
     "$vuetify.theme.dark"(dark) {
       localStorage.setItem("darkTheme", dark.toString());
-      if (dark) document.querySelector('meta[name="theme-color"]').setAttribute("content", "#202124");
+      if (dark) document.querySelector('meta[name="theme-color"]').setAttribute("content", "#000000");
       else document.querySelector('meta[name="theme-color"]').setAttribute("content", "#FFFFFF");
       if (window.ga) window.ga("set", "dimension1", dark.toString());
     },
@@ -518,7 +518,7 @@ export default {
     this.$MS_PER_DAY = this.$MS_PER_MIN * 60 * 24;
     if (localStorage.getItem("darkTheme") == "true") {
       this.$vuetify.theme.dark = true;
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#202124");
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#000000");
     } else
       document.querySelector('meta[name="theme-color"]').setAttribute("content", "#FFFFFF");
     window.addEventListener("pwaOfflineReady", () => this.snackbars.offlineReady = true);
